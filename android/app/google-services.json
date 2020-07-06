@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1026346614038",
+    "firebase_url": "https://farofa-fatec-rp.firebaseio.com",
+    "project_id": "farofa-fatec-rp",
+    "storage_bucket": "farofa-fatec-rp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026346614038:android:62d408cb12c37b13d3e437",
+        "android_client_info": {
+          "package_name": "com.example.fatec_pdm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026346614038-pbf7vjs4ptgdhrmjj7j5l4c2piq860rg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM_86lKw7mhBUmhzJg6M3v2Ly6IIGGTpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026346614038-pbf7vjs4ptgdhrmjj7j5l4c2piq860rg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'alerta.dart';
 
 class CadReceita extends StatelessWidget {
   @override
@@ -34,18 +33,21 @@ class CadReceita extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 15.0),
                   width: 250,
                   height: 100,
-                  //decoration: BoxDecoration(color: const Color(0xff7c94b6)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green, width: 1),
+                      borderRadius: BorderRadius.circular(18),
+                      color: const Color(0xff7c94b6)),
                   child: Column(children: <Widget>[
                     Center(
                         child: Text("<< Controle de Receitas >>",
-                            style: TextStyle(fontSize: 18))),
+                            style: TextStyle(color: Colors.white,fontSize: 18))),
                     Center(
                         child: Text("",
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold))),
                     Center(
                         child: Text("Por favor clique na opção desejada.",
-                            style: TextStyle(fontSize: 18)))
+                            style: TextStyle(color: Colors.white,fontSize: 18)))
                   ]),
                 ),
                 SizedBox(
@@ -69,7 +71,7 @@ class CadReceita extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(
                           context,
-                          '/tela5',
+                          '/tela6',
                         );
                       }),
                 ),
@@ -92,7 +94,10 @@ class CadReceita extends StatelessWidget {
                       ),
                       color: Colors.green,
                       onPressed: () {
-                        showAlertDialog1(context);
+                        Navigator.pushNamed(
+                          context,
+                          '/tela5',
+                        );
                       }),
                 ),
                 SizedBox(

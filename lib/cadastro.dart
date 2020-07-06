@@ -12,7 +12,12 @@ class Cadastro extends StatelessWidget {
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.backspace),
-              onPressed: () {Navigator.pushNamed(context,'/tela1',);},
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  '/tela1',
+                );
+              },
             )
           ]),
       body: Center(
@@ -27,16 +32,19 @@ class Cadastro extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 15.0),
                   width: 250,
                   height: 110,
-                  //decoration: BoxDecoration(color: const Color(0xff7c94b6)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green, width: 1),
+                      borderRadius: BorderRadius.circular(18),
+                      color: const Color(0xff7c94b6)),
                   child: Column(children: <Widget>[
                     Center(
                         child: Text("<< Tela de Cadastros >>",
-                            style: TextStyle(fontSize: 18))),
+                            style: TextStyle(color: Colors.white,fontSize: 18))),
                     Center(child: Text("")),
                     Text(""),
                     Center(
                         child: Text("Por favor escolha a opção desejada.",
-                            style: TextStyle(fontSize: 18)))
+                            style: TextStyle(color: Colors.white,fontSize: 18)))
                   ]),
                 ),
                 SizedBox(
@@ -57,8 +65,12 @@ class Cadastro extends StatelessWidget {
                         ),
                       ),
                       color: Colors.green,
-                      onPressed: () {Navigator.pushNamed(context,'/tela4',);}
-                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/tela4',
+                        );
+                      }),
                 ),
                 SizedBox(
                   height: 20,

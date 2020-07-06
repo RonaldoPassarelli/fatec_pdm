@@ -1,11 +1,13 @@
+import 'package:farofa/listaingrediente.dart';
+import 'cadreceitanova.dart';
+import 'listareceita.dart';
 import 'sobre.dart';
 import 'package:flutter/material.dart';
 import 'menuprincipal.dart';
-import 'listareceitas.dart';
 import 'cadreceita.dart';
 import 'mensagem.dart';
 import 'cadastro.dart';
-import 'detalhareceita.dart';
+//import 'detalhareceita.dart';
 
 void main() => runApp(MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -15,12 +17,16 @@ void main() => runApp(MaterialApp(
           "/tela2": (context) => MenuPrincipal(),
           "/tela3": (context) => Cadastro(),
           "/tela4": (context) => CadReceita(),
-          "/tela5": (context) => Lista(),
-          "/tela6": (context) => Detalhareceita(),
+          "/tela5": (context) => CadNovaReceita(),
+          "/tela6": (context) => ListaReceita(),
+          "/tela7": (context) => ListaIngrediente(),
           "/tela10": (context) => Sobremim(),
 
           //"/tela6": (context) => Testebuton(),
         }));
+
+class ListaIngredientenew {
+}
 
 class MyApp extends StatefulWidget {
   @override

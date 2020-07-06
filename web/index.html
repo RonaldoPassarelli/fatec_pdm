@@ -18,6 +18,31 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAhhdTAzwqrfmJFO9zjbKHNvGA0FZvQ3yI",
+    authDomain: "farofa-fatec-rp.firebaseapp.com",
+    databaseURL: "https://farofa-fatec-rp.firebaseio.com",
+    projectId: "farofa-fatec-rp",
+    storageBucket: "farofa-fatec-rp.appspot.com",
+    messagingSenderId: "1026346614038",
+    appId: "1:1026346614038:web:5f4bb17db159c21cd3e437"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->

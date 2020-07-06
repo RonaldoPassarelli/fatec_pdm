@@ -42,18 +42,23 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 15.0),
-                  width: 250,
+                  width: 255,
                   height: 110,
-                  //decoration: BoxDecoration(color: const Color(0xff7c94b6)),
+  
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.green, width: 1),
+                    borderRadius: BorderRadius.circular(18),
+                    color: const Color(0xff7c94b6)),
                   child: Column(
                     children: <Widget>[
-                      Text("<< Menu Principal >>",style: TextStyle(fontSize: 18)),
-                      Text(""),
+                      Text("<< Menu Principal >>",style: TextStyle(color: Colors.white,fontSize: 18)),
+                      Text("",style:TextStyle(color: Colors.white,fontSize: 6)),
                       Text("Ola " + msg.mensagem + "!",
-                          style: TextStyle(fontSize: 18)),
+                          style: TextStyle(color: Colors.white,fontSize: 18)),
+                          Text("",style:TextStyle(color: Colors.white,fontSize: 6)),
                       Center(
                           child: Text("O que você deseja fazer?",
-                              style: TextStyle(fontSize: 18)))
+                              style: TextStyle(color: Colors.white,fontSize: 18)))
                     ],
                   ),
                 ),
