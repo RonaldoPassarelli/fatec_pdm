@@ -39,12 +39,14 @@ class Cadastro extends StatelessWidget {
                   child: Column(children: <Widget>[
                     Center(
                         child: Text("<< Tela de Cadastros >>",
-                            style: TextStyle(color: Colors.white,fontSize: 18))),
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18))),
                     Center(child: Text("")),
                     Text(""),
                     Center(
                         child: Text("Por favor escolha a opção desejada.",
-                            style: TextStyle(color: Colors.white,fontSize: 18)))
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18)))
                   ]),
                 ),
                 SizedBox(
@@ -91,7 +93,7 @@ class Cadastro extends StatelessWidget {
                       ),
                       color: Colors.green,
                       onPressed: () {
-                        showAlertDialog1(context);
+                        Navigator.pushNamed(context, '/tela8');
                       }),
                 ),
                 SizedBox(

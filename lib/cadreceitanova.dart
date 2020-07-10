@@ -8,7 +8,6 @@ class CadNovaReceita extends StatefulWidget {
 }
 
 class _CadNovaReceitaState extends State<CadNovaReceita> {
-
   //controles para os campos de texto
   TextEditingController txtNome = TextEditingController();
   TextEditingController txtDescricao = TextEditingController();
@@ -29,18 +28,17 @@ class _CadNovaReceitaState extends State<CadNovaReceita> {
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
- 
- //
+    //
     // RECUPERAR o ID do Documento
     //
     final String idDocumento = ModalRoute.of(context).settings.arguments;
 
     if (idDocumento != null) {
-      if (txtNome.text == "" && txtDescricao.text == "" && txtCodreceita.text == "") {
+      if (txtNome.text == "" &&
+          txtDescricao.text == "" &&
+          txtCodreceita.text == "") {
         getDocumento(idDocumento);
       }
     }
@@ -81,7 +79,7 @@ class _CadNovaReceitaState extends State<CadNovaReceita> {
               height: 30,
             ),
 
-                        //CAMPO CODRECEITA
+            //CAMPO CODRECEITA
             TextField(
               controller: txtDescricao,
               style:
@@ -109,11 +107,15 @@ class _CadNovaReceitaState extends State<CadNovaReceita> {
                       // Inserir ou Atualizar
                       //
                       if (idDocumento == null) {
-                        inserir(context, 
-                          Receita(idDocumento, txtNome.text,txtDescricao.text, txtCodreceita.text ));
+                        inserir(
+                            context,
+                            Receita(idDocumento, txtNome.text,
+                                txtDescricao.text, txtCodreceita.text));
                       } else {
-                        atualizar(context,
-                            Receita(idDocumento, txtNome.text,txtDescricao.text,txtCodreceita.text));
+                        atualizar(
+                            context,
+                            Receita(idDocumento, txtNome.text,
+                                txtDescricao.text, txtCodreceita.text));
                       }
                     },
                   ),
@@ -138,35 +140,27 @@ class _CadNovaReceitaState extends State<CadNovaReceita> {
         ),
       ),
     );
-
-
   }
 
-    //
+  //
   // ATUALIZAR
   //
-  void atualizar(BuildContext context, Receita receita) async{
-    await db.collection("receita").document(receita.id)
-      .updateData(
-        {
-          "nome": receita.nome,
-          "descricao": receita.descricao
-        }
-      );
+  void atualizar(BuildContext context, Receita receita) async {
+    await db
+        .collection("receita")
+        .document(receita.id)
+        .updateData({"nome": receita.nome, "descricao": receita.descricao});
     Navigator.pop(context);
   }
 
   //
   // INSERIR
   //
-  void inserir(BuildContext context, Receita receita) async{
-    await db.collection("receita")
-      .add(
-        {
-          "nome": receita.nome,
-          "descricao": receita.descricao,
-        }
-      );
+  void inserir(BuildContext context, Receita receita) async {
+    await db.collection("receita").add({
+      "nome": receita.nome,
+      "descricao": receita.descricao,
+    });
     Navigator.pop(context);
-  } 
+  }
 }

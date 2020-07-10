@@ -40,14 +40,16 @@ class CadReceita extends StatelessWidget {
                   child: Column(children: <Widget>[
                     Center(
                         child: Text("<< Controle de Receitas >>",
-                            style: TextStyle(color: Colors.white,fontSize: 18))),
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18))),
                     Center(
                         child: Text("",
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold))),
                     Center(
                         child: Text("Por favor clique na opção desejada.",
-                            style: TextStyle(color: Colors.white,fontSize: 18)))
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18)))
                   ]),
                 ),
                 SizedBox(

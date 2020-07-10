@@ -2,24 +2,24 @@
 class Ingrediente {
   //Atributos
   String _id;
-  String _codrec;
-  String _ingrediente;
+  String _codigo;
+  String _descricao;
   String _unidade;
-  int _valor;
+  String _valor;
 
   //Construtor
-  Ingrediente(this._id, this._codrec, this._ingrediente, this._unidade, this._valor);
+  Ingrediente(this._id, this._codigo, this._descricao, this._unidade, this._valor);
 
   //Getters
   String get id => _id;
-  String get codrec => _codrec;
-  String get ingrediente => _ingrediente;
+  String get codigo => _codigo;
+  String get descricao => _descricao;
   String get unidade => _unidade;
-  int get valor => _valor;
+  String get valor => _valor;
   Ingrediente.map(dynamic obj) {
     this._id = obj['id'];
-    this._codrec = obj['codrec'];
-    this._ingrediente = obj['ingrediente'];
+    this._codigo = obj['codigo'];
+    this._descricao = obj['descricao'];
     this._unidade = obj['unidade'];
     this._valor = obj['valor'];
   }
@@ -30,8 +30,8 @@ class Ingrediente {
     if (_id != null) {
       map["id"] = _id;
     }
-    map["codrec"] = _codrec;
-    map["ingrediente"] = _ingrediente;
+    map["codigo"] = _codigo;
+    map["descricao"] = _descricao;
     map["unidade"] = _unidade;
     map["valor"] = _valor;
     return map;
@@ -42,8 +42,8 @@ class Ingrediente {
     //Atribuir id ao this._id, somente se id não for
     //nulo, caso contrário atribui '' (vazio).
     this._id = id ?? '';
-    this._codrec = map["codrec"];
-    this._ingrediente = map["ingrediente"];
+    this._codigo = map["codigo"];
+    this._descricao = map["descricao"];
     this._unidade = map["unidade"];
     this._valor = map["valor"];
   }

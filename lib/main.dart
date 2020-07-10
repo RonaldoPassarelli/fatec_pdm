@@ -1,16 +1,21 @@
-import 'package:farofa/listaingrediente.dart';
+import 'package:flutter/cupertino.dart';
+import 'cadIngrediente.dart';
+import 'cadingredientenovo.dart';
+import 'listaingrediente.dart';
+import 'listaingredientes.dart';
+import 'mensagem.dart';
 import 'cadreceitanova.dart';
 import 'listareceita.dart';
 import 'sobre.dart';
 import 'package:flutter/material.dart';
 import 'menuprincipal.dart';
 import 'cadreceita.dart';
-import 'mensagem.dart';
 import 'cadastro.dart';
-//import 'detalhareceita.dart';
 
-void main() => runApp(MaterialApp(
+void main() async => runApp(MaterialApp(
+        
         debugShowCheckedModeBanner: false,
+        
         initialRoute: "/tela1",
         routes: {
           "/tela1": (context) => Telalogin(),
@@ -19,14 +24,15 @@ void main() => runApp(MaterialApp(
           "/tela4": (context) => CadReceita(),
           "/tela5": (context) => CadNovaReceita(),
           "/tela6": (context) => ListaReceita(),
-          "/tela7": (context) => ListaIngrediente(),
+          "/tela7": (context) => ListaIngredientes(),
+          "/tela8": (context) => CadIngrediente(),
+          "/tela9": (context) => ListaIngrediente(),
           "/tela10": (context) => Sobremim(),
+          "/tela11": (context) => CadNovoIngrediente(),
 
-          //"/tela6": (context) => Testebuton(),
         }));
 
-class ListaIngredientenew {
-}
+class ListaIngredientenew {}
 
 class MyApp extends StatefulWidget {
   @override
@@ -39,14 +45,6 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false, title: "AppFarofa", home: Telalogin()
 
-/* 
-*****************************************************
-Plotze, esta página e a seguinte foram adaptadas da
-Calculadora de IMC dada em sala de aula.
-Nas demais foram aproveitados parte dos botões
-e formatação dos mesmos.
-******************************************************
-*/
         );
   }
 }
@@ -58,10 +56,12 @@ class Telalogin extends StatefulWidget {
 
 class _TelaloginState extends State<Telalogin> {
   GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-
   TextEditingController txtUser = TextEditingController();
   TextEditingController txtPaswd = TextEditingController();
-  var mensagem = '';
+
+  String mensagem = '';
+  String passwd = '';
+  int testlogin = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,27 +146,31 @@ class _TelaloginState extends State<Telalogin> {
         width: 250,
         height: 50,
         child: RaisedButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18.0),
-          ),
-          child: Text(
-            "Acessar",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0),
             ),
-          ),
-          color: Colors.green,
-          onPressed: () {
-            if (_formkey.currentState.validate()) {
-              mensagem = txtUser.text;
-              //_calcular();
-              Navigator.pushNamed(context, '/tela2',
-                  arguments: Mensagem(mensagem));
-            }
-          },
-        ),
+            child: Text(
+              "Acessar",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
+            color: Colors.green,
+            onPressed: () {
+              if (_formkey.currentState.validate()) {
+                mensagem = txtUser.text;
+                passwd = txtPaswd.text;
+                //testlogin = autenticar(mensagem, passwd);
+                //if(testlogin == 1){
+                  Navigator.pushNamed(context, "/tela2", arguments: Mensagem(mensagem));
+                 // }
+                //  showAlertDialog1(context);
+              }
+            }),
       ),
     );
+  }
+  autenticar(String nome, String senha){
   }
 }

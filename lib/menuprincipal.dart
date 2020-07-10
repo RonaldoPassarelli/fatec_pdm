@@ -44,21 +44,24 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   padding: EdgeInsets.symmetric(vertical: 15.0),
                   width: 255,
                   height: 110,
-  
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.green, width: 1),
-                    borderRadius: BorderRadius.circular(18),
-                    color: const Color(0xff7c94b6)),
+                      border: Border.all(color: Colors.green, width: 1),
+                      borderRadius: BorderRadius.circular(18),
+                      color: const Color(0xff7c94b6)),
                   child: Column(
                     children: <Widget>[
-                      Text("<< Menu Principal >>",style: TextStyle(color: Colors.white,fontSize: 18)),
-                      Text("",style:TextStyle(color: Colors.white,fontSize: 6)),
+                      Text("<< Menu Principal >>",
+                          style: TextStyle(color: Colors.white, fontSize: 18)),
+                      Text("",
+                          style: TextStyle(color: Colors.white, fontSize: 6)),
                       Text("Ola " + msg.mensagem + "!",
-                          style: TextStyle(color: Colors.white,fontSize: 18)),
-                          Text("",style:TextStyle(color: Colors.white,fontSize: 6)),
+                          style: TextStyle(color: Colors.white, fontSize: 18)),
+                      Text("",
+                          style: TextStyle(color: Colors.white, fontSize: 6)),
                       Center(
                           child: Text("O que você deseja fazer?",
-                              style: TextStyle(color: Colors.white,fontSize: 18)))
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 18)))
                     ],
                   ),
                 ),
@@ -105,7 +108,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                         ),
                       ),
                       color: Colors.green,
-                      onPressed: () {showAlertDialog1(context);}),
+                      onPressed: () {
+                        showAlertDialog1(context);
+                      }),
                 ),
                 SizedBox(
                   height: 20,
@@ -125,7 +130,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                         ),
                       ),
                       color: Colors.green,
-                      onPressed: () {showAlertDialog1(context);}),
+                      onPressed: () {
+                        showAlertDialog1(context);
+                      }),
                 ),
                 SizedBox(
                   height: 20,
@@ -145,7 +152,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                         ),
                       ),
                       color: Colors.green,
-                      onPressed: () {showAlertDialog1(context);}),
+                      onPressed: () {
+                        showAlertDialog1(context);
+                      }),
                 ),
                 SizedBox(
                   height: 20,

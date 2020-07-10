@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'mensagem.dart';
 import 'model/ingrediente.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +11,8 @@ class ListaIngrediente extends StatefulWidget {
 class _ListaIngredienteState extends State<ListaIngrediente> {
   //Conexão Fluter+Firebase
   final db = Firestore.instance;
-  final String colecao = "ingredientes";
-  String codigo = "";
+  final String colecao = "ingrediente";
+
   //Lista dinâmica para manipulação dos dados
   List<Ingrediente> lista = List();
 
@@ -45,21 +44,25 @@ class _ListaIngredienteState extends State<ListaIngrediente> {
 
   @override
   Widget build(BuildContext context) {
-    final Mensagem msg2 = ModalRoute.of(context).settings.arguments;
-    codigo = msg2.mensagem;
+    //final Mensagem msg2 = ModalRoute.of(context).settings.arguments;
+    //codigo = msg2.mensagem;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ingredientes desta Receita"),
-        centerTitle: true,
-        backgroundColor: Colors.green,
-      ),
+          title: Text("Ingredientes cadastrados"),
+          centerTitle: true,
+          backgroundColor: Colors.green,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.backspace),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )
+          ]),
       body: StreamBuilder<QuerySnapshot>(
 
           //fonte de dados
-          stream: db
-              .collection(colecao)
-              .where("codrec", isEqualTo: msg2.mensagem)
-              .snapshots(),
+          stream: db.collection(colecao).snapshots(),
           //exibição dos dados
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
@@ -73,14 +76,18 @@ class _ListaIngredienteState extends State<ListaIngrediente> {
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(
-                          lista[index].ingrediente,
+                          "Cod: " +
+                              lista[index].codigo +
+                              " - Desc: " +
+                              lista[index].descricao,
                           style: TextStyle(fontSize: 20),
                         ),
                         subtitle: Container(
                             child: Text(
-                                lista[index].unidade +
-                                    "  qtde  " +
-                                    lista[index].valor.toString(),
+                                "Unid. Medida: " +
+                                    lista[index].unidade +
+                                    "  Valor: R\$ " +
+                                    lista[index].valor,
                                 style: TextStyle(fontSize: 16))),
                         trailing: IconButton(
                             icon: Icon(Icons.delete),
@@ -88,23 +95,25 @@ class _ListaIngredienteState extends State<ListaIngrediente> {
                               // db.collection(colecao).document(lista[index].id).delete();
                             }),
                         onTap: () {
-                          Navigator.pushNamed(context, "/tela5",
-                              arguments: lista[index].codrec);
+                          Navigator.pushNamed(
+                            context,
+                            "/tela11",
+                          );
                         },
                       );
                     });
             }
           }),
-      /*floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         foregroundColor: Colors.white,
         backgroundColor: Colors.green,
         elevation: 0,
         child: Icon(Icons.add),
         onPressed: () {
-          Navigator.pushNamed(context, "/tela5", arguments: codigo);
+          Navigator.pushNamed(context, "/tela11", arguments: null);
         },
       ),
-      backgroundColor: Colors.brown[50],
-    */);
+      backgroundColor: Colors.white,
+    );
   }
 }

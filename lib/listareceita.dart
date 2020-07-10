@@ -86,7 +86,7 @@ class _ListaReceitaState extends State<ListaReceita> {
                         trailing: IconButton(
                             icon: Icon(Icons.delete),
                             onPressed: () {
-                              // db.collection(colecao).document(lista[index].id).delete();
+                              //db.collection(colecao).document(lista[index].id).delete();
                             }),
 
                         onTap: () {
